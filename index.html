@@ -73,10 +73,18 @@
     });
 
     setInterval(() => {
+        const addzero = (i) => {
+            if (i<10)
+            {
+                i='0'+i
+            }
+            return i
+        }
+
         const time = new Date()
-        const hour = time.getHours()
-        const minutes = time.getMinutes()
-        const second = time.getSeconds()
+        let hour = addzero(time.getHours())
+        let minutes = addzero(time.getMinutes())
+        let second = addzero(time.getSeconds())
 
         document.getElementById('hour').innerHTML = hour
         document.getElementById('minutes').innerHTML = minutes
